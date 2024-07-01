@@ -1,0 +1,248 @@
+/* PdfViewer.css */
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  .main-content {
+    margin-left: 320px;
+    padding: 20px;
+  }
+  
+  .file-container {
+    border: 1px solid #ccc;
+    min-height: 500px;
+    position: relative;
+  }
+  
+  .input-container {
+    margin-bottom: 20px;
+  }
+  
+  .separator {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  .mode-container, .display-mode {
+    margin-bottom: 20px;
+  }
+  
+  .pdf-info-container {
+    margin-bottom: 20px;
+  }
+  
+  #coordinateList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #coordinateList li {
+    margin-bottom: 10px;
+  }
+  
+  .area-container {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .left-buttons, .right-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-container-area {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .deleteBtn {
+    background-color: #f44336;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #da190b;
+  }
+  
+  /* .copyBtn {
+    background-color: #008CBA;
+  }
+  
+  .copyBtn:hover {
+    background-color: #007399;
+  } */
+  
+  .pdfOverlay {
+    position: relative;
+    margin-bottom: 20px;
+    cursor: crosshair;
+  }
+  
+
+  .temporaryMark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .temporaryArea {
+    position: absolute;
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.2);
+    pointer-events: none;
+  }
+  
+  #pdfCoordinates {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .clickPoint {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .crosshair {
+    position: absolute;
+    background-color: red;
+  }
+  
+  .crosshair.horizontal {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .crosshair.vertical {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  
+  .pointNumber {
+    position: absolute;
+    top: -8px; /* Di chuyển lên trên */
+    right: -8px; /* Di chuyển sang phải */
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 2px 3px;
+    border-radius: 1px;
+    line-height: 1; /* Đảm bảo số không bị căn giữa theo chiều dọc */
+  }
+  .markedArea {
+    position: absolute;
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+    pointer-events: none;
+  }
+  
+  .areaNumber {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .item-content {
+    flex-grow: 1;
+  }
+  
+  .button-container-area {
+    display: flex;
+    gap: 5px;
+  }
+  
+  #coordinateList li {
+    margin-bottom: 10px;
+  }
+  
+  .deleteBtn, .copyBtn {
+    padding: 2px 5px;
+    font-size: 12px;
+  }
+  .red-button {
+    background-color: #ff4d4d;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .red-button:hover {
+    background-color: #ff3333; 
+  }
+  .textLayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.2;
+    line-height: 1.0;
+     border: 2px solid black; 
+  }
+  
+  .textLayer > span {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: crosshair;
+    transform-origin: 0% 0%;
+  }
+  
+  .textLayer ::selection { background: rgba(0,0,255,0.5); }
+  .textLayer ::-moz-selection { background: rgba(0,0,255,0.5); }
